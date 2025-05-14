@@ -43,7 +43,7 @@ def save_domains(domains, output_filename):
 
 def save_domains_json(domains, output_filename):
     data = {
-        "version": 3,
+        "version": 2,
         "rules": [
             {
                 "domain_keyword": list(domains)
