@@ -12,8 +12,7 @@ upstream_sources = {
     "Hagezi_pro": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/dnsmasq/pro.txt",
     "Hagezi_tif": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif-onlydomains.txt",
     "Hagezi_piracy": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/anti.piracy-onlydomains.txt",
-    "ut1_dating": "https://raw.githubusercontent.com/olbat/ut1-blacklists/refs/heads/master/blacklists/dating/domains",
-    "xRuffKez_NRD14day": "https://github.com/xRuffKez/NRD/raw/refs/heads/main/lists/14-day/domains-only/nrd-14day.txt"
+    "ut1_dating": "https://raw.githubusercontent.com/olbat/ut1-blacklists/refs/heads/master/blacklists/dating/domains"
 }
 
 def download_blocklists():

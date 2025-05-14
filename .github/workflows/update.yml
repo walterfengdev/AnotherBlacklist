@@ -2,8 +2,8 @@ name: Update Another Blacklist
 
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
   schedule:
     - cron: "30 03 * * *"
   workflow_dispatch:
