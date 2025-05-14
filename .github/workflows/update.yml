@@ -12,6 +12,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: "Setup sing-box"
+      env:
+        SING_BOX_DEB_URL: "https://github.com/SagerNet/sing-box/releases/download/v1.12.0-beta.13/sing-box_1.12.0-beta.13_linux_amd64.deb"
+      run: |
+          set -Eeuo pipefail
+          wget -O sing-box.deb $SING_BOX_DEB_URL
+          sudo dpkg -i sing-box.deb
+
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
@@ -28,6 +36,7 @@ jobs:
         # python scripts/01_update_blacklist.py
         python scripts/02_parsing.py
         python scripts/03_merge.py
+        python scripts/04_convert.py
 
 # Commit changed files to your repo
     - name: Git Auto Commit
@@ -36,5 +45,5 @@ jobs:
         # Commit message
         commit_message: automatic/regular Another Blacklist updates
         # File pattern used for `git add`. For example `src/*.js`
-        file_pattern: 'src/*.txt plain/*.txt json/*.json domains/*.txt domains/*.json'
+        file_pattern: 'src/*.txt plain/*.txt json/*.json domains/*.txt domains/*.json srs/*.srs'
         skip_dirty_check: false
