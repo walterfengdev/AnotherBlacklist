@@ -41,12 +41,12 @@ def save_domains(domains, output_filename):
         for domain in domains:
             f.write(domain + "\n")
 
-def save_domains_json(domains, output_filename):
+def save_domains_json(domains, type, output_filename):
     data = {
-        "version": 2,
+        "version": 3,
         "rules": [
             {
-                "domain_keyword": list(domains)
+                type: list(domains)
             }
         ]
     }
@@ -71,11 +71,12 @@ def main():
     for name, info in upstream_sources.items():
         format = info["format"]
         domain_index = info["domain_index"]
+        type = info["type"]
         filename = f"{src_dir}/{name}.txt"
         domains = parse_domains(filename, info["format"], info["domain_index"])
         if domains:
             save_domains(domains, f"{plain_dir}/{name}_domains.txt")
-            save_domains_json(domains, f"{json_dir}/{name}_domains.json")
+            save_domains_json(domains, type, f"{json_dir}/{name}_domains.json")
             print(f"Processed {name} blocklist.")
 
 if __name__ == "__main__":

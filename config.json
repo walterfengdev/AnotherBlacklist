@@ -2,66 +2,79 @@
     "sources": {
         "StevenBlack": {
             "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-only/hosts",
+            "type": "domain",
             "format": "hosts",
             "domain_index": 1
         },
         "1Host": {
             "url": "https://raw.githubusercontent.com/badmojr/1Hosts/master/Pro/domains.wildcards",
+            "type": "domain_suffix",
             "format": "domains",
             "domain_index": 0
         },
         "Hagezi_gambling": {
             "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling-onlydomains.txt",
+            "type": "domain_suffix",
             "format": "domains",
             "domain_index": 0
         },
         "BrigsLabs_gambling": {
             "url": "https://raw.githubusercontent.com/BrigsLabs/judol/refs/heads/main/judol_domains.txt",
+            "type": "domain_suffix",
             "format": "domains",
             "domain_index": 0
         },
         "ut1_gambling": {
             "url": "https://github.com/olbat/ut1-blacklists/raw/refs/heads/master/blacklists/gambling/domains",
+            "type": "domain_suffix",
             "format": "domains",
             "domain_index": 0
         },
         "oisd_big": {
             "url": "https://big.oisd.nl/dnsmasq",
+            "type": "domain_suffix",
             "format": "dnsmasq",
             "domain_index": 1
         },
         "Hagezi_pro": {
             "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/dnsmasq/pro.txt",
+            "type": "domain_suffix",
             "format": "dnsmasq",
             "domain_index": 1
         },
         "Hagezi_tif": {
             "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif-onlydomains.txt",
+            "type": "domain_suffix",
             "format": "domains",
             "domain_index": 0
         },
         "Hagezi_piracy": {
             "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/anti.piracy-onlydomains.txt",
+            "type": "domain_suffix",
             "format": "domains",
             "domain_index": 0
         },
         "ut1_dating": {
             "url": "https://raw.githubusercontent.com/olbat/ut1-blacklists/refs/heads/master/blacklists/dating/domains",
+            "type": "domain_suffix",
             "format": "domains",
             "domain_index": 0
         },
         "jarelllama": {
             "url": "https://raw.githubusercontent.com/jarelllama/Scam-Blocklist/refs/heads/main/lists/wildcard_domains/scams.txt",
+            "type": "domain_suffix",
             "format": "domains",
             "domain_index": 0
         },
         "Discord-AntiScam": {
             "url": "https://raw.githubusercontent.com/Discord-AntiScam/scam-links/refs/heads/main/list.txt",
+            "type": "domain_suffix",
             "format": "domains",
             "domain_index": 0
         },
         "elliotwutingfeng": {
             "url": "https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_hostnames_light.txt",
+            "type": "domain_suffix",
             "format": "domains",
             "domain_index": 0
         }

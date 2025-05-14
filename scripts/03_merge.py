@@ -12,15 +12,17 @@ def load_whitelist(filename):
                 whitelist.add(domain)
     return whitelist
 
-def merge_domains(input_dir, whitelist):
-    domains = set()
+def merge_domains(input_dir, whitelist, upstream_sources):
+    domains = {"domain": set(), "domain_suffix": set(), "domain_keyword": set()}
     for filename in os.listdir(input_dir):
         if filename.endswith("_domains.txt"):
+            name = filename.replace("_domains.txt", "")
+            type = upstream_sources[name]["type"]
             with open(os.path.join(input_dir, filename), "r") as f:
                 for line in f:
                     domain = line.strip().lower()
                     if domain not in whitelist:
-                        domains.add(domain)
+                        domains[type].add(domain)
     return domains
 
 def save_domains(domains, output_filename):
@@ -29,13 +31,14 @@ def save_domains(domains, output_filename):
             f.write(domain + "\n")
 
 def save_domains_json(domains, output_filename):
+    rules = []
+    for type, domain_list in domains.items():
+        if domain_list:
+            rules.append({type: sorted(list(domain_list))})
+
     data = {
-        "version": 2,
-        "rules": [
-            {
-                "domain_keyword": sorted(list(domains))
-            }
-        ]
+        "version": 3,
+        "rules": rules
     }
     with open(output_filename, "w") as f:
         json.dump(data, f, indent=4)
@@ -44,12 +47,15 @@ def main():
     input_dir = "plain"
     whitelist_file = "whitelist.txt"
     output_dir = "domains"
+    upstream_sources_file = "config.json"
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
     whitelist = load_whitelist(whitelist_file)
-    domains = merge_domains(input_dir, whitelist)
-    save_domains(domains, os.path.join(output_dir, "anotherblacklist.txt"))
+    with open(upstream_sources_file, "r") as f:
+        upstream_sources = json.load(f)["sources"]
+    domains = merge_domains(input_dir, whitelist, upstream_sources)
+    save_domains(set().union(*domains.values()), os.path.join(output_dir, "anotherblacklist.txt"))
     save_domains_json(domains, os.path.join(output_dir, "anotherblacklist.json"))
 
 if __name__ == "__main__":
