@@ -17,11 +17,11 @@ def compile_json_to_srs(json_dir, output_dir):
                 print(f"Error compiling {json_file}: {e}")
 
 def main():
-    json_dirs = ["json", "domains"]
     output_dir = "srs"
+    json_dirs = ["json", "domains"]
 
     for json_dir in json_dirs:
-        compile_json_to_srs(json_dir, os.path.join(output_dir, json_dir))
+        compile_json_to_srs(json_dir, output_dir)
 
 if __name__ == "__main__":
     main()
