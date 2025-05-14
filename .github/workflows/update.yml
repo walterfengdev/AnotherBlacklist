@@ -2,8 +2,6 @@ name: Update Another Blacklist
 
 on:
   push:
-    # branches:
-    #   - main
   schedule:
     - cron: "30 03 * * *"
   workflow_dispatch:
@@ -27,7 +25,8 @@ jobs:
 
     - name: Downloads From Upstream
       run: |
-        python scripts/01_update_blacklist.py
+        # python scripts/01_update_blacklist.py
+        python scripts/02_parsing.py
 
 # Commit changed files to your repo
     - name: Git Auto Commit
@@ -36,5 +35,5 @@ jobs:
         # Commit message
         commit_message: automatic/regular Another Blacklist updates
         # File pattern used for `git add`. For example `src/*.js`
-        file_pattern: src/*.txt
+        file_pattern: 'src/*.txt plain/*.txt json/*.json'
         skip_dirty_check: false
