@@ -3,7 +3,7 @@ name: Update Another Blacklist
 on:
   push:
     paths:
-    - 'whitelist.txt'
+      - 'whitelist.txt'
   schedule:
     - cron: "30 03 * * *"
   workflow_dispatch:
