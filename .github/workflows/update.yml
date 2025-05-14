@@ -33,7 +33,7 @@ jobs:
 
     - name: Downloads From Upstream
       run: |
-        # python scripts/01_update_blacklist.py
+        python scripts/01_update_blacklist.py
         python scripts/02_parsing.py
         python scripts/03_merge.py
         python scripts/04_convert.py
