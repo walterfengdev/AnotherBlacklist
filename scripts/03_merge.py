@@ -1,13 +1,19 @@
 import os
 import json
 
-def merge_domains(input_dir):
+def load_whitelist(filename):
+    with open(filename, "r") as f:
+        return set(line.strip().lower() for line in f)
+
+def merge_domains(input_dir, whitelist):
     domains = set()
     for filename in os.listdir(input_dir):
         if filename.endswith("_domains.txt"):
             with open(os.path.join(input_dir, filename), "r") as f:
                 for line in f:
-                    domains.add(line.strip().lower())
+                    domain = line.strip().lower()
+                    if domain not in whitelist:
+                        domains.add(domain)
     return domains
 
 def save_domains(domains, output_filename):
@@ -29,11 +35,13 @@ def save_domains_json(domains, output_filename):
 
 def main():
     input_dir = "plain"
+    whitelist_file = "whitelist.txt"
     output_dir = "domains"
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    domains = merge_domains(input_dir)
+    whitelist = load_whitelist(whitelist_file)
+    domains = merge_domains(input_dir, whitelist)
     save_domains(domains, os.path.join(output_dir, "anotherblacklist.txt"))
     save_domains_json(domains, os.path.join(output_dir, "anotherblacklist.json"))
 
