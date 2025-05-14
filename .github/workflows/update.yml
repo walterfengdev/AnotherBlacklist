@@ -27,6 +27,7 @@ jobs:
       run: |
         # python scripts/01_update_blacklist.py
         python scripts/02_parsing.py
+        python scripts/03_merge.py
 
 # Commit changed files to your repo
     - name: Git Auto Commit
