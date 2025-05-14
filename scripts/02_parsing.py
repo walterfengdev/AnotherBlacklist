@@ -56,7 +56,7 @@ def save_domains_json(domains, output_filename):
 def main():
     src_dir = "src"
     plain_dir = "plain"
-    upstream_sources = load_upstream_sources("upstream_src.json")
+    upstream_sources = load_upstream_sources("config.json")
     if not upstream_sources:
         print("No upstream sources loaded.")
         return

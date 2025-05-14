@@ -11,7 +11,7 @@ def load_upstream_sources(filename):
         print(f"Error loading upstream sources: {e}")
         return {}
 
-upstream_sources = load_upstream_sources("upstream_src.json")
+upstream_sources = load_upstream_sources("config.json")
 
 def download_blocklists():
     src_dir = "src"
