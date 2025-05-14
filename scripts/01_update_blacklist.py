@@ -1,26 +1,25 @@
 import requests
 import os
+import json
 
-# Define upstream sources
-upstream_sources = {
-    "StevenBlack": "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-only/hosts",
-    "1Host": "https://raw.githubusercontent.com/badmojr/1Hosts/master/Pro/domains.wildcards",
-    "Hagezi_gambling": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling-onlydomains.txt",
-    "BrigsLabs_gambling": "https://raw.githubusercontent.com/BrigsLabs/judol/refs/heads/main/judol_domains.txt",
-    "ut1_gambling": "https://github.com/olbat/ut1-blacklists/raw/refs/heads/master/blacklists/gambling/domains",
-    "oisd_big": "https://big.oisd.nl/dnsmasq",
-    "Hagezi_pro": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/dnsmasq/pro.txt",
-    "Hagezi_tif": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif-onlydomains.txt",
-    "Hagezi_piracy": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/anti.piracy-onlydomains.txt",
-    "ut1_dating": "https://raw.githubusercontent.com/olbat/ut1-blacklists/refs/heads/master/blacklists/dating/domains"
-}
+def load_upstream_sources(filename):
+    try:
+        with open(filename, "r") as f:
+            data = json.load(f)
+        return data["sources"]
+    except json.JSONDecodeError as e:
+        print(f"Error loading upstream sources: {e}")
+        return {}
+
+upstream_sources = load_upstream_sources("upstream_src.json")
 
 def download_blocklists():
     src_dir = "src"
     if not os.path.exists(src_dir):
         os.makedirs(src_dir)
 
-    for name, url in upstream_sources.items():
+    for name, info in upstream_sources.items():
+        url = info["url"]
         filename = f"{src_dir}/{name}.txt"
         try:
             response = requests.get(url)
@@ -32,4 +31,7 @@ def download_blocklists():
             print(f"Error updating {name} blocklist: {e}")
 
 if __name__ == "__main__":
-    download_blocklists()
+    if upstream_sources:
+        download_blocklists()
+    else:
+        print("No upstream sources loaded.")

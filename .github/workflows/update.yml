@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'whitelist.txt'
+      - 'config.json'
   schedule:
     - cron: "30 03 * * *"
   workflow_dispatch:

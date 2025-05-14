@@ -2,40 +2,39 @@ import os
 import re
 import json
 
-# Define the upstream sources and their formats
-upstream_sources = {
-    "StevenBlack": {"format": "hosts", "domain_index": 1},
-    "1Host": {"format": "domains", "domain_index": 0},
-    "Hagezi_gambling": {"format": "domains", "domain_index": 0},
-    "BrigsLabs_gambling": {"format": "domains", "domain_index": 0},
-    "ut1_gambling": {"format": "domains", "domain_index": 0},
-    "oisd_big": {"format": "dnsmasq", "domain_index": 1},
-    "Hagezi_pro": {"format": "dnsmasq", "domain_index": 1},
-    "Hagezi_tif": {"format": "domains", "domain_index": 0},
-    "Hagezi_piracy": {"format": "domains", "domain_index": 0},
-    "ut1_dating": {"format": "domains", "domain_index": 0},
-}
+def load_upstream_sources(filename):
+    try:
+        with open(filename, "r") as f:
+            data = json.load(f)
+        return data["sources"]
+    except json.JSONDecodeError as e:
+        print(f"Error loading upstream sources: {e}")
+        return {}
 
 def parse_domains(filename, format, domain_index):
-    domains = set()
-    with open(filename, "r") as f:
-        for line in f:
-            line = line.strip()
-            if format == "hosts":
-                parts = line.split()
-                if len(parts) > domain_index and parts[0].startswith("0.0.0.0"):
-                    domains.add(parts[domain_index])
-            elif format == "domains":
-                if line and not line.startswith("#"):
-                    domains.add(line)
-            elif format == "dnsmasq":
-                match = re.match(r"server=/([^/]+)/", line)
-                if match:
-                    domains.add(match.group(1))
-                match = re.match(r"local=/([^/]+)/", line)
-                if match:
-                    domains.add(match.group(1))
-    return domains
+    try:
+        domains = set()
+        with open(filename, "r") as f:
+            for line in f:
+                line = line.strip()
+                if format == "hosts":
+                    parts = line.split()
+                    if len(parts) > domain_index and parts[0].startswith("0.0.0.0"):
+                        domains.add(parts[domain_index])
+                elif format == "domains":
+                    if line and not line.startswith("#"):
+                        domains.add(line)
+                elif format == "dnsmasq":
+                    match = re.match(r"server=/([^/]+)/", line)
+                    if match:
+                        domains.add(match.group(1))
+                    match = re.match(r"local=/([^/]+)/", line)
+                    if match:
+                        domains.add(match.group(1))
+        return domains
+    except FileNotFoundError:
+        print(f"File {filename} not found.")
+        return set()
 
 def save_domains(domains, output_filename):
     with open(output_filename, "w") as f:
@@ -57,6 +56,11 @@ def save_domains_json(domains, output_filename):
 def main():
     src_dir = "src"
     plain_dir = "plain"
+    upstream_sources = load_upstream_sources("upstream_src.json")
+    if not upstream_sources:
+        print("No upstream sources loaded.")
+        return
+
     if not os.path.exists(plain_dir):
         os.makedirs(plain_dir)
 
@@ -65,10 +69,14 @@ def main():
         os.makedirs(json_dir)
 
     for name, info in upstream_sources.items():
+        format = info["format"]
+        domain_index = info["domain_index"]
         filename = f"{src_dir}/{name}.txt"
         domains = parse_domains(filename, info["format"], info["domain_index"])
-        save_domains(domains, f"{plain_dir}/{name}_domains.txt")
-        save_domains_json(domains, f"{json_dir}/{name}_domains.json")
+        if domains:
+            save_domains(domains, f"{plain_dir}/{name}_domains.txt")
+            save_domains_json(domains, f"{json_dir}/{name}_domains.json")
+            print(f"Processed {name} blocklist.")
 
 if __name__ == "__main__":
     main()
