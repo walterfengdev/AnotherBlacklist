@@ -1,4 +1,4 @@
-name: Generate and commit prefixes
+name: Update Another Blacklist
 
 on:
   push:
@@ -25,19 +25,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Generate prefixes
+    - name: Downloads From Upstream
       run: |
         python scripts/01_update_blacklist.py
-
-    # - name: Generate ufw rules
-    #   run: python generate_ufw.py
 
 # Commit changed files to your repo
     - name: Git Auto Commit
       uses: stefanzweifel/git-auto-commit-action@v4.16.0
       with:
         # Commit message
-        commit_message: automatic/regular prefixes updates
+        commit_message: automatic/regular Another Blacklist updates
         # File pattern used for `git add`. For example `src/*.js`
-        file_pattern: ./*.txt
+        file_pattern: src/*.txt
         skip_dirty_check: false
