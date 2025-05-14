@@ -48,5 +48,5 @@ jobs:
         # Commit message
         commit_message: automatic/regular Another Blacklist updates
         # File pattern used for `git add`. For example `src/*.js`
-        file_pattern: 'src/*.txt plain/*.txt json/*.json domains/*.txt domains/*.json srs/*.srs'
+        file_pattern: 'src/*.txt plain/*.txt json/*.json domains/*.txt srs/*.srs'
         skip_dirty_check: false
