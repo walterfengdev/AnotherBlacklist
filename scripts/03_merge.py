@@ -2,8 +2,15 @@ import os
 import json
 
 def load_whitelist(filename):
+    whitelist = set()
     with open(filename, "r") as f:
-        return set(line.strip().lower() for line in f)
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#"):
+                parts = line.split()
+                domain = parts[0].lower()
+                whitelist.add(domain)
+    return whitelist
 
 def merge_domains(input_dir, whitelist):
     domains = set()
