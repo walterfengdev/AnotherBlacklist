@@ -41,18 +41,18 @@ jobs:
         python scripts/03_merge.py
         python scripts/04_convert.py
 
-    - name: Move files to release branch
+    - name: Move files to release branch and commit
       run: |
-        mkdir -p release/domains release/json release/plain release/srs
-        mv domains/* release/domains/
-        mv json/* release/json/
-        mv plain/* release/plain/
-        mv srs/* release/srs/
-
-    - name: Push changes to release branch
-      uses: ad-m/github-push-action@v0.6.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: release
-        directory: release
-        force: true
+        git checkout -b release
+        mkdir -p domains json plain srs
+        mv release/domains/* domains/
+        mv release/json/* json/
+        mv release/plain/* plain/
+        mv release/srs/* srs/
+        git add .
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -m "Update release branch" || echo "No changes to commit"
+        git push origin release --force
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
