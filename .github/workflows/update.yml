@@ -41,14 +41,12 @@ jobs:
         python scripts/03_merge.py
         python scripts/04_convert.py
 
-    - name: Move files to release branch and commit
+    - name: Push changes to release branch
       run: |
-        git checkout -b release
-        mkdir -p domains json plain srs
-        mv release/domains/* domains/
-        mv release/json/* json/
-        mv release/plain/* plain/
-        mv release/srs/* srs/
+        git fetch origin release
+        git checkout release
+        git rm -rf .
+        cp -r domains json plain srs .
         git add .
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
