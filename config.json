@@ -18,12 +18,6 @@
             "format": "domains",
             "domain_index": 0
         },
-        "BrigsLabs_gambling": {
-            "url": "https://raw.githubusercontent.com/BrigsLabs/judol/refs/heads/main/judol_domains.txt",
-            "type": "domain_suffix",
-            "format": "domains",
-            "domain_index": 0
-        },
         "ut1_gambling": {
             "url": "https://github.com/olbat/ut1-blacklists/raw/refs/heads/master/blacklists/gambling/domains",
             "type": "domain_suffix",
