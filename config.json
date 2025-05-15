@@ -60,20 +60,8 @@
             "format": "domains",
             "domain_index": 0
         },
-        "jarelllama": {
-            "url": "https://raw.githubusercontent.com/jarelllama/Scam-Blocklist/refs/heads/main/lists/wildcard_domains/scams.txt",
-            "type": "domain_suffix",
-            "format": "domains",
-            "domain_index": 0
-        },
         "Discord-AntiScam": {
             "url": "https://raw.githubusercontent.com/Discord-AntiScam/scam-links/refs/heads/main/list.txt",
-            "type": "domain_suffix",
-            "format": "domains",
-            "domain_index": 0
-        },
-        "elliotwutingfeng": {
-            "url": "https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_hostnames_light.txt",
             "type": "domain_suffix",
             "format": "domains",
             "domain_index": 0
