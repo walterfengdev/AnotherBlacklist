@@ -41,12 +41,18 @@ jobs:
         python scripts/03_merge.py
         python scripts/04_convert.py
 
-# Commit changed files to your repo
-    - name: Git Auto Commit
-      uses: stefanzweifel/git-auto-commit-action@v4.16.0
+    - name: Move files to release branch
+      run: |
+        mkdir -p release/domains release/json release/plain release/srs
+        mv domains/* release/domains/
+        mv json/* release/json/
+        mv plain/* release/plain/
+        mv srs/* release/srs/
+
+    - name: Push changes to release branch
+      uses: ad-m/github-push-action@v0.6.0
       with:
-        # Commit message
-        commit_message: automatic/regular Another Blacklist updates
-        # File pattern used for `git add`. For example `src/*.js`
-        file_pattern: 'src/*.txt plain/*.txt json/*.json domains/*.txt srs/*.srs'
-        skip_dirty_check: false
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: release
+        directory: release
+        force: true
