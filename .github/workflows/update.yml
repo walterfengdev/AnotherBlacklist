@@ -43,13 +43,20 @@ jobs:
 
     - name: Push changes to release branch
       run: |
+        mkdir release
+        mkdir -p release/domains release/json release/plain release/srs
+        mv domains/* release/domains/
+        mv json/* release/json/
+        mv plain/* release/plain/
+        mv srs/* release/srs/
+        cd release
+        git init
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git init
         git remote add origin https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        git checkout -b release
-        git add domains json plain srs
-        git commit -m "Update release branch" || echo "No changes to commit"
+        git branch -M release
+        git add .
+        git commit -m "Update release branch"
         git push -f origin release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
