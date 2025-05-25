@@ -237,7 +237,6 @@ apkzone.net
 appmods.us
 arrayanime.com
 assistiranimes.org
-audio-track.com
 audio.download
 audiobb.com
 audiobit.ru
@@ -345,6 +344,8 @@ ebookshare.net
 ebookvortex.com
 ebookvortex.net
 emp3juices.cc
+emulator.games
+emulatorgames.net
 engbookspdf.net
 esubmovie.net
 extremeshare.org
@@ -455,7 +456,6 @@ kissanimes.tv
 kisssub.org
 komodoisland.net
 leeapk.com
-lermangasonline.info
 letsupload.co
 letsupload.io
 letsupload.org
@@ -760,7 +760,6 @@ toromod.com
 torrent.mp3quran.net
 torrent.share.net.ua
 torrents.animes-bg.com
-tracker.animasub.ru
 tracker.animeworld.cx
 tracker.dmcomic.org
 tracker.fansub.id
@@ -830,7 +829,6 @@ yts.pl
 yts.pm
 yts.re
 yts.rs
-yts.st
 yts.to
 yts.unblocked.llc
 yts.vc
