@@ -6,12 +6,6 @@
             "format": "hosts",
             "domain_index": 1
         },
-        "1Host": {
-            "url": "https://raw.githubusercontent.com/badmojr/1Hosts/master/Pro/domains.wildcards",
-            "type": "domain_suffix",
-            "format": "domains",
-            "domain_index": 0
-        },
         "Hagezi_gambling": {
             "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling-onlydomains.txt",
             "type": "domain_suffix",
