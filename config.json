@@ -7,7 +7,7 @@
             "domain_index": 1
         },
         "Hagezi_gambling": {
-            "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling-onlydomains.txt",
+            "url": "https://raw.githubusercontent.com/cbuijs/hagezi/refs/heads/main/lists/gambling/domains",
             "type": "domain_suffix",
             "format": "domains",
             "domain_index": 0
@@ -19,9 +19,9 @@
             "domain_index": 0
         },
         "oisd_big": {
-            "url": "https://big.oisd.nl/dnsmasq",
+            "url": "https://raw.githubusercontent.com/cbuijs/oisd/refs/heads/master/big/domains.top-n",
             "type": "domain_suffix",
-            "format": "dnsmasq",
+            "format": "domains",
             "domain_index": 1
         },
         "Hagezi_pro": {
@@ -31,13 +31,13 @@
             "domain_index": 1
         },
         "Hagezi_tif": {
-            "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif-onlydomains.txt",
+            "url": "https://raw.githubusercontent.com/cbuijs/hagezi/refs/heads/main/lists/tif/domains",
             "type": "domain_suffix",
             "format": "domains",
             "domain_index": 0
         },
         "Hagezi_piracy": {
-            "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/anti.piracy-onlydomains.txt",
+            "url": "https://raw.githubusercontent.com/cbuijs/hagezi/refs/heads/main/lists/anti-piracy/domains",
             "type": "domain_suffix",
             "format": "domains",
             "domain_index": 0
