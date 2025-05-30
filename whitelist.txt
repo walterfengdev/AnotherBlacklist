@@ -9,6 +9,8 @@ coingecko.com
 ouo.io
 keyword:sing-box
 full:vercel.app
+full:api.vercel.app
+full:www.vercel.app
 
 #####################################################
 # Hagezi Piracy
