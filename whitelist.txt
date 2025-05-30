@@ -8,6 +8,7 @@ saweria.co
 coingecko.com
 ouo.io
 keyword:sing-box
+full:vercel.app
 
 #####################################################
 # Hagezi Piracy
