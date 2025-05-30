@@ -13,7 +13,7 @@ full:api.vercel.app
 full:www.vercel.app
 
 #####################################################
-# Hagezi Piracy
+# Google Ads
 #####################################################
 2mdn-cn.net
 2mdn.net
