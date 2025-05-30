@@ -32,7 +32,6 @@ keyword:share
 keyword:mp3
 keyword:fire
 keyword:sub
-keyword:book
 keyword:audio
 keyword:upload
 keyword:yts.
@@ -41,6 +40,7 @@ keyword:emulator
 keyword:rapidgator
 keyword:coolrom
 keyword:filecr
+
 
 
 #####################################################
@@ -305,6 +305,7 @@ ir.ebaystatic.com                                    #Ebay - Breaks "See All" in
 gha.ebay.com                                         #Ebay - Notifications
 vod.ebay.com                                         #Ebay - Print Preview
 secureir.ebaystatic.com                              #Ebay - Edit Item
+mach-100.ebay.com                                    #Ebay - Upload Image
 rover.ebay.at                                        #Ebay - View Orders
 rover.ebay.com                                       #Ebay - View Orders
 rover.ebay.de                                        #Ebay - View Orders
@@ -318,12 +319,13 @@ dpservice.fidelity.com                               #Fidelity - Data download
 iris06-gold-ssl.gameloft.com                         #Gameloft - Prevents games from starting
 notifications-pa.googleapis.com                  #Google   2FA - Sends notification to phone/tablet
 androidplatformbackuprestore-pa.googleapis.com   #Google   Android (Backup)
-cryptauthenrollment.googleapis.com               #Google   Android (Set Payment Info)
-ota-cache1.googlezip.net                         #Google   Android (System Updates)
 androidtvlauncherxfe-pa.googleapis.com           #Google   Android (Check for internet)
-play-lh.googleusercontent.com                    #Google   Android (Store Images)
-gameswhitelisted.googleapis.com                  #Google   Android (Game signin)
+contactsui-pa.googleapis.com                     #Google   Android (Messages)  Breaks 'Your Profile'
+cryptauthenrollment.googleapis.com               #Google   Android (Set Payment Info)
 discover-pa.googleapis.com                       #Google   Android (News Page - Far left home screen)
+gameswhitelisted.googleapis.com                  #Google   Android (Game signin)
+ota-cache1.googlezip.net                         #Google   Android (System Updates)
+play-lh.googleusercontent.com                    #Google   Android (Store Images)
 tasks-pa.clients6.google.com                     #Google   Calendar Sync (Phone)
 tasks-pa.googleapis.com                          #Google   Calendar Sync (Phone)
 clients3.google.com                              #Google   ChromeOS Signin (connection is limited)
@@ -336,8 +338,10 @@ storage.googleapis.com                           #Google   Chrome Store (Downloa
 dl.google.com                                    #Google   Chrome (Download)
 tools.google.com                                 #Google   Chrome (Update)
 apis.google.com                                  #Google   Chrome
+apikeys.clients6.google.com                      #Google   Cloud - API Keys
 cloudconsole-pa.clients6.google.com              #Google   Cloud - Breaks search bar
 cloud.google.com                                 #Google   Cloud - Breaks 'Terms of Service'
+cloudusersettings-pa.clients6.google.com         #Google   Cloud - Breaks 'website
 encrypted-tbn0.gstatic.com                       #Google   Images
 encrypted-tbn1.gstatic.com                       #Google   Images
 encrypted-tbn2.gstatic.com                       #Google   Images
@@ -361,6 +365,7 @@ proactivebackend-pa.googleapis.com               #Google   Breaks Gemini (App)
 ogs.google.com                                   #Google   Keep (Breaks Sync / Web Apps)
 scone-pa.clients6.google.com                     #Google   Keep (Breaks Sync)
 signaler-pa.clients6.google.com                  #Google   Keep (Breaks Sync)
+firebasedynamiclinks.googleapis.com              #Google   Links (Maps: Share)
 accounts.google.com                              #Google   Login
 gds.google.com                                   #Google   Login (After 2FA)
 mobilemaps-pa-gz.googleapis.com                  #Google   Maps (Download maps for offline use)
@@ -459,7 +464,8 @@ ecs.office.com                                          #Microsoft   Office Down
 metadata.templates.cdn.office.net                       #Microsoft   Office Download Templates
 officeredir.microsoft.com                               #Microsoft   Office (Outage Information)
 offline.officeapps.live.com                             #Microsoft   Office (Outage Information)
-res-h3.public.cdn.office.net                            #Microsoft   Office portal.microsoft.com)
+res-h3.public.cdn.office.net                            #Microsoft   Office (portal.microsoft.com)
+clients.config.office.net                               #Microsoft   Office (Policy updates)
 blob.officehome.msocdn.com                              #Microsoft   Office Login
 logincdn.msftauth.net                                   #Microsoft   Office Login
 account.activedirectory.windowsazure.com                #Microsoft   Office Login [2 Step]
@@ -524,6 +530,7 @@ deposit.us.shopifycs.com                             #Shopping Sites (Breaks Che
 dyncdn.me                                            #Torrents - Pictures
 n-device-api.tplinkcloud.com                         #TP-Link - Firmware Updates
 k.twitchcdn.net                                      #Twitch - Breaks login, follow channel
+ubiquiti.ada.support                                 #Ubiquiti - Breaks login (Trust Device)
 static.ui.com                                        #Ubiquiti - NVR (Icons)
 unpkg.com                                            #Ubiquiti - NVR
 api-gw.uid.alpha.ui.com                              #Ubiquiti - NVR (Application Updates)
