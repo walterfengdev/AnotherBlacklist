@@ -65,31 +65,32 @@ keyword:adservice.google.
 # Hagezi Piracy
 #####################################################
 keyword:anime
+keyword:apk
+keyword:audio
+keyword:comic
+keyword:coolrom
+keyword:droid
+keyword:emulator
+keyword:filecr
+keyword:fire
+keyword:indoxxi
+keyword:komik
+keyword:libgen
 keyword:manga
-keyword:scans
 keyword:manhua
 keyword:manhwa
-keyword:comic
-keyword:indoxxi
-keyword:libgen
-keyword:pahe
-keyword:mod
-keyword:droid
-keyword:apk
 keyword:mega
-keyword:share
+keyword:mod
 keyword:mp3
-keyword:fire
+keyword:nyaa.
+keyword:pahe
+keyword:rapidgator
+keyword:scans
+keyword:sci-hub
+keyword:share
 keyword:sub
-keyword:audio
 keyword:upload
 keyword:yts.
-keyword:nyaa.
-keyword:emulator
-keyword:rapidgator
-keyword:coolrom
-keyword:filecr
-keyword:komik
 
 
 
