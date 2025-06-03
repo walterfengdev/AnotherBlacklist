@@ -89,6 +89,7 @@ keyword:emulator
 keyword:rapidgator
 keyword:coolrom
 keyword:filecr
+keyword:komik
 
 
 
