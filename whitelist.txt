@@ -91,7 +91,11 @@ keyword:share
 keyword:sub
 keyword:upload
 keyword:yts.
-
+keyword:alldebrid
+romsfun.com
+romspure.cc
+alldebrid.com
+nexon.com
 
 
 #####################################################
