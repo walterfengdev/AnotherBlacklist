@@ -205,7 +205,8 @@ event-img.enter-pubg-new-state.com                  #PUPG: New State           B
 ebdsw.enter-pubg-new-state.com                      #PUPG: New State           What's New (Still pops up, just says "page not found")
 video.enter-pubg-new-state.com                      #PUPG: New State           Crate videos
 lb-rdv-siege-xplay-multiaz-prod.ubisoft.com         #Rainbow Six: Siege        Game will not launch
-
+https://msu.io/maplestoryn/
+#Maple story Universe      Login Game
 
 #####################################################
 # Hardware
