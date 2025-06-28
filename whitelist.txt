@@ -92,10 +92,15 @@ keyword:sub
 keyword:upload
 keyword:yts.
 keyword:alldebrid
+keyword:kuyhaa
+keyword:gigapurbalingga
+keyword:yasir252
+keyword:torrent
 romsfun.com
 romspure.cc
 alldebrid.com
 nexon.com
+ps4pkg.com
 
 
 #####################################################
@@ -185,6 +190,10 @@ prod.escapefromtarkov.com                           #Escape from Tarkov        S
 ragfair.escapefromtarkov.com                        #Escape from Tarkov        Flea Market
 wsn-03.escapefromtarkov.com                         #Escape from Tarkov        Player invite
 wsn-04.escapefromtarkov.com                         #Escape from Tarkov        Player invite
+jp.livelog.nexon.com
+#Dynasty Warriors M.       Login to Game
+toy.log.nexon.io
+#Dynasty Warriors M.       Login to Game
 halostats.svc.halowaypoint.com                      #Halo: Infinite            Breaks leveling up
 api.epicgames.dev                                   #Insurgency: Sandstorm     Breaks anticheat
 ping1.tnt-ea.com                                    Plants vs Zombies: Heros   Check for internet
