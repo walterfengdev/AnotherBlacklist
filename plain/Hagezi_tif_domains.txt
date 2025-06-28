@@ -1,0 +1,13 @@
+firebaseapp.com
+vercel.app
+gitbook.io
+blogspot.com
+glitch.me
+webflow.io
+pages.dev
+hopto.org
+web.app
+weebly.com
+duckdns.org
+zapto.org
+r2.dev
